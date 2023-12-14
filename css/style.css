@@ -13,7 +13,7 @@
 
 /* Webapp laout */
 body {
-
+    height: 100vh;
     background: linear-gradient(
         to bottom,
         #009688 20%,
@@ -38,7 +38,6 @@ body {
 .current_chat_container {
     background-color: #eaeaea;
     height: 90vh;
-    overflow-y: auto;
 
     /* dbug */
     border: 1px solid #ccc;
@@ -49,6 +48,7 @@ body {
     flex: 1;
     width:35%;
     background-color: #ffffff;
+    overflow-y: auto;
 }
 
 .current_chat_container {
@@ -60,14 +60,36 @@ body {
 /* container layout */
 
 .head_bar, .bottom_bar{
-    height: 100px;
+    height: 90px;
     background-color: #eaeaea;
+}
 
-    
+/* chat_container layout */
 
+.notification_bar{
+    height: 100px;
+    background-color: #8edafc;
+}
+
+.search_bar{
+    height: 60px;
+    background-color: #ffffff;
+}
+
+.chat_bar_container{
+    overflow-y: auto;
+}
+
+.chat_bar {
+    height: 100px;
+}
+
+.active_bar{
+    background-color:#e9ebeb;
 }
 
 .conversation{
+    overflow-y: auto;
     height: calc(100% - 200px);
     background-image: url(https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png);
 }
