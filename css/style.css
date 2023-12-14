@@ -37,21 +37,54 @@ body {
 .chat_container,
 .current_chat_container {
     background-color: #eaeaea;
-    border: 1px solid #ccc;
     height: 90vh;
     overflow-y: auto;
+
+    /* dbug */
+    border: 1px solid #ccc;
     
 }
 
 .chat_container {
     flex: 1;
     width:35%;
+    background-color: #ffffff;
 }
 
 .current_chat_container {
     flex: 2;
     width: 65%;
 }
+
+
+/* container layout */
+
+.head_bar, .bottom_bar{
+    height: 100px;
+    background-color: #eaeaea;
+
+    
+
+}
+
+.conversation{
+    height: calc(100% - 200px);
+    background-image: url(https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Media Query sotto i 1300px */
 @media screen and (max-width: 1100px) {
