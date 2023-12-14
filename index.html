@@ -63,12 +63,12 @@
             <div class="chat_bar_container">
 
                 <!-- barra di conversazione -->
-                <div class="chat_bar active_bar">
+                <div v-for="(contact, index) in contacts" :key="index" class="chat_bar">
 
-                    <img src="img/avatar_1.jpg" alt="" class="avatar">
+                    <img :src="contact.avatar" alt="" class="avatar">
 
                     <div class="info_contatto">
-                        <h4>Michele</h4>
+                        <h4>{{contact.name}}</h4>
                         <span>ultimo messaggio inviato</span>
                     </div>
 
@@ -91,7 +91,7 @@
              <div class="head_bar">
                 <div>
                     <img src="img/avatar_1.jpg" alt="" class="avatar">
-                    <h4>Michele</h4>
+                    <h4>{{contacts[0].name}}</h4>
                 </div>
 
                 <div>
