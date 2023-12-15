@@ -63,7 +63,7 @@
             <div class="chat_bar_container">
 
                 <!-- barra di conversazione -->
-                <div v-for="(contact, index) in contacts" :key="index"   @click="setActiveContact(index)" class="chat_bar">
+                <div v-for="(contact, index) in contacts" :key="index"   @click="setActiveContact(index)" :class="{ 'chat_bar': true, 'active_bar': index === activeIndex }">
 
                     <img :src="contact.avatar" alt="" class="avatar">
 
