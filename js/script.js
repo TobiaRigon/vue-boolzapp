@@ -190,6 +190,18 @@ createApp({
 
         this.contacts[this.activeIndex].messages.push(newMessage);
         this.newMessageText = '';  
+
+// risposta automatica
+        setTimeout(() => {
+            const replyMessage = {
+                date: new Date().toLocaleString(),
+                message: 'Ok',
+                status: 'received',
+            };
+
+            this.contacts[this.activeIndex].messages.push(replyMessage);
+        }, 2000);
+    
     },
   
 },
