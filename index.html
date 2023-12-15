@@ -76,10 +76,6 @@
 
                 </div>
 
-                <div class="chat_bar"></div>
-                <div class="chat_bar"></div>
-                <div class="chat_bar"></div>
-              
 
             </div>
 
@@ -114,7 +110,7 @@
             <div class="bottom_bar">
                 <i class="fa-regular fa-face-smile"></i>
 
-                <input type="text"  placeholder="  Scrivi un messaggio">
+                <input type="text" v-model="newMessageText" @keyup.enter="sendMessage" placeholder="Scrivi un messaggio">
 
 
                 <i class="fa-solid fa-microphone"></i>

@@ -168,6 +168,7 @@ createApp({
         }
       ],
       activeIndex: 0,
+      newMessageText: '', 
       
     
     }
@@ -177,6 +178,18 @@ createApp({
 
     setActiveContact(index) {
         this.activeIndex = index;
+    },
+
+
+    sendMessage() {
+        const newMessage = {
+            date: new Date().toLocaleString(),
+            message: this.newMessageText, 
+            status: 'sent', 
+        };
+
+        this.contacts[this.activeIndex].messages.push(newMessage);
+        this.newMessageText = '';  
     },
   
 },
