@@ -104,19 +104,9 @@
 
             <div class="conversation">
 
-                <div class="sent">
-                    <div class="message">Hai lavato i compiti?</div>
-                    <span class="hour">15:30</span>
-                </div>
-
-                <div class="sent">
-                    <div class="message">Hai fatto il cane?</div>
-                    <span class="hour">15:30</span>
-                </div>
-
-                <div class="recived">
-                    <div class="message">Sto tutto fatto!</div>
-                    <span class="hour">15:30</span>
+                <div v-for="(message, messageIndex) in contacts[activeIndex].messages" :key="messageIndex" :class="{ 'sent': message.status === 'sent', 'received': message.status === 'received' }">
+                    <div class="message">{{ message.message }}</div>
+                    <span class="hour">{{ message.date.split(' ')[1] }}</span>
                 </div>
 
             </div>
