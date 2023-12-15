@@ -105,10 +105,14 @@
                 <!-- per messaggio in messages -->
                 <div v-for="(message, messageIndex) in contacts[activeIndex].messages" :key="messageIndex" :class="{ 'sent': message.status === 'sent', 'received': message.status === 'received' }">
                     <div class="message">{{ message.message }}</div>
-                    <span class="hour">{{ message.date.split(' ')[1] }}</span>
 
-                    <!-- toggleMenu -->
-                    <i class="fa-solid fa-ellipsis-vertical" @click="toggleMenu(messageIndex)"></i>
+                    <div class="message_info">
+                        <span class="hour">{{ message.date.split(' ')[1] }}</span>
+
+                        <!-- toggleMenu -->
+                        <i class="fa-solid fa-ellipsis-vertical" @click="toggleMenu(messageIndex)"></i>
+                    </div>
+                  
 
                     <!-- menu tendina -->
                     <div v-if="showMenu && showMenuIndex === messageIndex" class="dropdown-menu">
