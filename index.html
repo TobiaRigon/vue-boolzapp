@@ -55,15 +55,16 @@
 
             </div>
 
-            <div class="search_bar">
+            <div class="search_bar"  >
                 <button><i class="fa-solid fa-magnifying-glass"></i></button>
-            <input type="text" placeholder="Cerca o inizia una nuova chat">
+                <input type="text" v-model="searchText" placeholder="Cerca o inizia una nuova chat" @input="filterContacts">
+                
             </div>
 
             <div class="chat_bar_container">
 
                 <!-- barra di conversazione -->
-                <div v-for="(contact, index) in contacts" :key="index"   @click="setActiveContact(index)" :class="{ 'chat_bar': true, 'active_bar': index === activeIndex }">
+                <div v-for="(contact, index) in filteredContacts" :key="index" @click="setActiveContact(index)" :class="{ 'chat_bar': true, 'active_bar': index === activeIndex }">
 
                     <img :src="contact.avatar" alt="" class="avatar">
 

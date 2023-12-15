@@ -169,7 +169,8 @@ createApp({
       ],
       activeIndex: 0,
       newMessageText: '', 
-      
+      searchText: '', 
+      filteredContacts: [],
     
     }
   },
@@ -203,11 +204,26 @@ createApp({
         }, 2000);
     
     },
+
+    filterContacts() {
+        const searchText = this.searchText.toLowerCase();
+        if (searchText === '') {
+            // campo ricerca vuoto, mostra tutti i contatti
+            this.filteredContacts = this.contacts;
+        } else {
+            // Altrimenti, filtra i contatti in base al testo inserito
+            this.filteredContacts = this.contacts.filter(contact => {
+                const contactName = contact.name.toLowerCase();
+                return contactName.includes(searchText);
+            });
+        }
+    },
   
 },
 
 mounted() {
 
+    this.filterContacts();
 
 },
 
