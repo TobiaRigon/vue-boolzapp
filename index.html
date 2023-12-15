@@ -58,7 +58,7 @@
             <div class="search_bar"  >
                 <button><i class="fa-solid fa-magnifying-glass"></i></button>
                 <input type="text" v-model="searchText" placeholder="Cerca o inizia una nuova chat" @input="filterContacts">
-                
+
             </div>
 
             <div class="chat_bar_container">
@@ -98,12 +98,23 @@
                 </div>
             </div>
 
-
+<!-- conversazione corrente -->
             <div class="conversation">
 
+
+                <!-- per messaggio in messages -->
                 <div v-for="(message, messageIndex) in contacts[activeIndex].messages" :key="messageIndex" :class="{ 'sent': message.status === 'sent', 'received': message.status === 'received' }">
                     <div class="message">{{ message.message }}</div>
                     <span class="hour">{{ message.date.split(' ')[1] }}</span>
+
+                    <!-- toggleMenu -->
+                    <i class="fa-solid fa-ellipsis-vertical" @click="toggleMenu(messageIndex)"></i>
+
+                    <!-- menu tendina -->
+                    <div v-if="showMenu && showMenuIndex === messageIndex" class="dropdown-menu">
+                        <button @click="deleteMessage(messageIndex)">Cancella messaggio</button>
+                    </div>
+
                 </div>
 
             </div>

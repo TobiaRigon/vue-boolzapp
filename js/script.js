@@ -171,6 +171,9 @@ createApp({
       newMessageText: '', 
       searchText: '', 
       filteredContacts: [],
+
+      showMenu: false,
+      showMenuIndex: null,
     
     }
   },
@@ -217,6 +220,24 @@ createApp({
                 return contactName.includes(searchText);
             });
         }
+    },
+
+    toggleMenu(index) {
+      
+        // inverti valore
+        this.showMenu = !this.showMenu;
+        // imposta indice
+        this.showMenuIndex = index;
+    },
+    
+
+    deleteMessage(index) {
+        // Cancella il messaggio
+        this.contacts[this.activeIndex].messages.splice(index, 1);
+
+        // Nascondi il menu a tendina dopo la cancellazione
+        this.showMenu = false;
+        this.showMenuIndex = null;
     },
   
 },
