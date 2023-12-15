@@ -4,6 +4,7 @@ const { createApp } = Vue
 createApp({
   data() {
     return {
+        // lista contatti
       contacts: [
         {
           name: 'Michele',
@@ -167,12 +168,15 @@ createApp({
           ],
         }
       ],
+    //   indice oggetto contatti
       activeIndex: 0,
       newMessageText: '', 
       searchText: '', 
       filteredContacts: [],
 
+    //   mostra/nascondi menu
       showMenu: false,
+    //   indice messaggio selezionato
       showMenuIndex: null,
     
     }
@@ -229,7 +233,7 @@ createApp({
         // imposta indice
         this.showMenuIndex = index;
     },
-    
+
 
     deleteMessage(index) {
         // Cancella il messaggio
@@ -239,6 +243,14 @@ createApp({
         this.showMenu = false;
         this.showMenuIndex = null;
     },
+
+
+    getLastMessageTime(contactIndex) {
+        const lastMessage = this.contacts[contactIndex].messages[this.contacts[contactIndex].messages.length - 1];
+        return lastMessage.date.split(' ')[1] ; 
+      },
+
+  
   
 },
 
