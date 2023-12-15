@@ -207,13 +207,13 @@ padding-left: 20px;
 /* conversazione */
 
 .conversation{
+    padding-top: 15px;
     display: flex;
     flex-direction: column;
 }
 
 .sent, .received{
     padding: 7px 15px;
-    /* max-width: 50%; */
     margin: 5px 35px;
     border-radius: 15px;
     display: inline-block;

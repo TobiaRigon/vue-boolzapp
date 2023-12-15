@@ -90,8 +90,8 @@
         <div class="current_chat_container">
              <div class="head_bar">
                 <div>
-                    <img src="img/avatar_1.jpg" alt="" class="avatar">
-                    <h4>{{contacts[0].name}}</h4>
+                    <img :src=contacts[activeIndex].avatar alt="" class="avatar">
+                    <h4>{{contacts[activeIndex].name}}</h4>
                 </div>
 
                 <div>
