@@ -63,7 +63,7 @@
             <div class="chat_bar_container">
 
                 <!-- barra di conversazione -->
-                <div v-for="(contact, index) in contacts" :key="index" class="chat_bar">
+                <div v-for="(contact, index) in contacts" :key="index"   @click="setActiveContact(index)" class="chat_bar">
 
                     <img :src="contact.avatar" alt="" class="avatar">
 
@@ -72,7 +72,7 @@
                         <span>ultimo messaggio inviato</span>
                     </div>
 
-                    <div class="time">12:00</div>
+                    <div class="time">12:00 </div>
 
                 </div>
 
